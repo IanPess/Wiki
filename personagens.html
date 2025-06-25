@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/personagens.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabecalho">
+        <div class="container">
+            <div class="cabecalho-conteudo">
+                <a href="index.html" class="logo">
+                    <div class="logo-icone">W</div>
+                    WikiHub
+                </a>
+                <nav class="navegacao">
+                    <a href="index.html">Início</a>
+                    <a href="#explorar">Explorar</a>
+                    <a href="personagens.html" class="ativo">Personagens</a>
+                    <a href="#comunidade">Comunidade</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <button class="menu-mobile">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <span>→</span>
+                <span>Personagens</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Seção Principal de Personagens -->
+    <section class="secao-personagens">
+        <div class="container">
+            <h1 class="titulo-pagina">Personagens</h1>
+            <p class="subtitulo-pagina">
+                Conheça todos os heróis, vilões e personagens secundários que moldam a narrativa. 
+                Cada um com sua história única, habilidades especiais e papel fundamental na aventura.
+            </p>
+
+
+            <!-- Grade de Personagens -->
+            <div class="personagens-grid">
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/xicrinho.png" alt="Xicrinho" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">☕</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Xicrinho (Cuphead)</h3>
+                        <span class="personagem-classe">Principal</span>
+                        <p class="personagem-descricao">
+                            Xicrinho é o mais confiante, audacioso e determinado dos irmãos. Tem uma personalidade carismática, porém problemática, e está sempre disposto a arriscar tudo para obter riquezas. Apesar de suas falhas, tem um bom coração e boas intenções.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Aventureiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Ilha Tinteiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Xícara</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/caneco.png" alt="Caneco" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🥤</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Caneco (Mugman)</h3>
+                        <span class="personagem-classe">Principal</span>
+                        <p class="personagem-descricao">
+                            Embora seja divertido como Cuphead, Caneco é mais cuidadoso e menos imprudente em comparação com seu irmão. Ele age como a voz da razão e sempre tenta evitar que se metam em confusões.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Aventureiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Ilha Tinteiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Xícara</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Rei Dado -->
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/dado.png" alt="Rei Dado" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                           
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Rei Dado</h3>
+                        <span class="personagem-classe">Antagonista</span>
+                        <p class="personagem-descricao">
+                            Rei Dado é um indivíduo desprezível, manipulador e de confiabilidade duvidosa. Age de forma relaxada e alegre, mas pode ser extremamente cruel quando quer. É muito arrogante e confiante em si mesmo.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Braço direito do Diabo</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Casa da Morte</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Dado</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Diabo -->
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/corno.png" alt="Diabo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Diabo</h3>
+                        <span class="personagem-classe">Chefe Final</span>
+                        <p class="personagem-descricao">
+                            O Diabo é um ser cruel e malévolo que concede ofertas em troca de almas. Não tem empatia com os outros, incluindo seus próprios servos. Tem como características principais o orgulho e egocentrismo.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Dono de Cassino</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Inkwell Hell</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Demônio</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Velha Chaleira -->
+                <div class="personagem-card secundario" data-classe="secundario">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/caneca.png" alt="Velha Chaleira" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Velha Chaleira</h3>
+                        <span class="personagem-classe">Mentor</span>
+                        <p class="personagem-descricao">
+                            Velha Chaleira é uma figura parental clássica, sendo muito sábio e sempre querendo que os irmãos façam a coisa certa. Está fortemente implícito que ele é um cavaleiro aposentado.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Mentor/Cuidador</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Ilha Tinteiro Um</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Chaleira</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Seu Torresmo -->
+                <div class="personagem-card secundario" data-classe="secundario">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/porko.png" alt="Seu Torresmo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🐷</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Seu Torresmo</h3>
+                        <span class="personagem-classe">Comerciante</span>
+                        <p class="personagem-descricao">
+                            Seu Torresmo é um porco antropomórfico comerciante. Ele é bege com focinho rosa, usa uma camiseta cinza, macacão castanho e um tapa-olho no olho direito.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Comerciante</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Todas as Ilhas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Porco</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Guardia -->
+                <div class="personagem-card secundario" data-classe="secundario">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/calice.png" alt="Calice" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Cálice Lendária</h3>
+                        <span class="personagem-classe">Guardiã</span>
+                        <p class="personagem-descricao">
+                            Ela é bastante educada e útil, sendo amigável com Cuphead e Mugman depois de resgatá-la.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Guardiã de Super Arts</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Mausoléus</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Cálice</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Narrador -->
+                <div class="personagem-card secundario" data-classe="secundario">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/narrador.png" alt="Seu Torresmo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Narrador</h3>
+                        <span class="personagem-classe">Narrador</span>
+                        <p class="personagem-descricao">
+                           Apesar de não realizar nenhuma aparição física durante o jogo, o Narrador está sempre presente, anunciando o início e o fim de cada nível de plataforma e batalhas contra chefes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

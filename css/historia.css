@@ -1,0 +1,406 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cor-primaria: #6366f1;
+            --cor-secundaria: #f1f5f9;
+            --cor-texto-primario: #1e293b;
+            --cor-texto-secundario: #64748b;
+            --cor-fundo: #ffffff;
+            --cor-fundo-secao: #f8fafc;
+            --cor-borda: #e2e8f0;
+            --cor-cuphead: #6366f1;
+            --cor-mugman: #8b5cf6;
+            --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --raio-borda: 12px;
+            --raio-borda-pequeno: 8px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto-primario);
+            background-color: var(--cor-fundo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho */
+        #cabecalho {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--cor-borda);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .cabecalho-conteudo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+
+        .logo-icone {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+            border-radius: var(--raio-borda-pequeno);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .navegacao {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .navegacao a {
+            text-decoration: none;
+            color: var(--cor-texto-secundario);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navegacao a:hover {
+            color: var(--cor-primaria);
+        }
+
+        .botao-voltar {
+            background: var(--cor-primaria);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--raio-borda-pequeno);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .botao-voltar:hover {
+            background: #5855eb;
+            transform: translateY(-1px);
+        }
+
+        /* Seção Hero */
+        .hero-cuphead {
+            padding: 120px 0 60px;
+ 
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-conteudo {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .titulo-hero {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitulo-hero {
+            font-size: 1.5rem;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 40px;
+        }
+
+        .fundo-cartoon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .fundo-cartoon::before,
+        .fundo-cartoon::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--cor-primaria), #8b5cf6);
+        }
+
+        .fundo-cartoon::before {
+            width: 200px;
+            height: 200px;
+            top: -100px;
+            right: 10%;
+        }
+
+        .fundo-cartoon::after {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            left: 10%;
+        }
+
+        /* Seção Principal */
+        .secao-historia {
+            padding: 80px 0;
+            background: var(--cor-fundo);
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .capitulo {
+            background: var(--cor-fundo);
+            border: 1px solid var(--cor-borda);
+            border-radius: var(--raio-borda);
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: var(--sombra-suave);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .capitulo:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .capitulo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+            border-radius: var(--raio-borda) var(--raio-borda) 0 0;
+        }
+
+        .titulo-capitulo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--cor-texto-primario);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icone-capitulo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .conteudo-capitulo {
+            color: var(--cor-texto-secundario);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .placeholder-texto {
+            background: var(--cor-fundo-secao);
+            border: 2px dashed var(--cor-borda);
+            border-radius: var(--raio-borda-pequeno);
+            padding: 24px;
+            text-align: center;
+            color: var(--cor-texto-secundario);
+            font-style: italic;
+        }
+
+        /* Seção de Personagens */
+        .secao-personagens {
+            padding: 80px 0;
+            background: var(--cor-fundo-secao);
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: var(--cor-texto-primario);
+        }
+
+        .grade-personagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .cartao-personagem {
+            background: var(--cor-fundo);
+            border-radius: var(--raio-borda);
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.3s ease;
+        }
+
+        .cartao-personagem:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .avatar-personagem {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .cuphead-avatar {
+            background: linear-gradient(135deg, var(--cor-cuphead), #ff6b6b);
+        }
+
+        .mugman-avatar {
+            background: linear-gradient(135deg, var(--cor-mugman), #6b9fff);
+        }
+
+        .devil-avatar {
+            background: linear-gradient(135deg, #8b0000, #ff4500);
+        }
+
+        .nome-personagem {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--cor-texto-primario);
+        }
+
+        .descricao-personagem {
+            color: var(--cor-texto-secundario);
+            font-size: 0.95rem;
+        }
+
+        /* Rodapé */
+        #rodape {
+            background: var(--cor-texto-primario);
+            color: white;
+            padding: 48px 0 24px;
+        }
+
+        .rodape-conteudo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .rodape-secao h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .rodape-secao a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .rodape-secao a:hover {
+            color: var(--cor-primaria);
+        }
+
+        .rodape-copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navegacao {
+                display: none;
+            }
+
+            .titulo-hero {
+                font-size: 2.5rem;
+            }
+
+            .capitulo {
+                padding: 24px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .titulo-capitulo {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .capitulo {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .capitulo:nth-child(1) { animation-delay: 0.1s; }
+        .capitulo:nth-child(2) { animation-delay: 0.2s; }
+        .capitulo:nth-child(3) { animation-delay: 0.3s; }
+        .capitulo:nth-child(4) { animation-delay: 0.4s; }
+
+        html {
+            scroll-behavior: smooth;
+        }

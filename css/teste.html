@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiHub - Personagens Cuphead</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cor-primaria: #6366f1;
+            --cor-secundaria: #f1f5f9;
+            --cor-texto-primario: #1e293b;
+            --cor-texto-secundario: #64748b;
+            --cor-fundo: #ffffff;
+            --cor-fundo-secao: #f8fafc;
+            --cor-borda: #e2e8f0;
+            --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --sombra-forte: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --raio-borda: 12px;
+            --raio-borda-pequeno: 8px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--cor-texto-primario);
+            background-color: var(--cor-fundo);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho */
+        #cabecalho {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--cor-borda);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .cabecalho-conteudo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+
+        .logo-icone {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+            border-radius: var(--raio-borda-pequeno);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .navegacao {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .navegacao a {
+            text-decoration: none;
+            color: var(--cor-texto-secundario);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navegacao a:hover,
+        .navegacao a.ativo {
+            color: var(--cor-primaria);
+        }
+
+        .navegacao a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--cor-primaria);
+            transition: width 0.3s ease;
+        }
+
+        .navegacao a:hover::after,
+        .navegacao a.ativo::after {
+            width: 100%;
+        }
+
+        .menu-mobile {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cor-primaria);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 100px 0 20px;
+            background: var(--cor-fundo-secao);
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .breadcrumb-nav a {
+            color: var(--cor-primaria);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .breadcrumb-nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Seção Principal de Personagens */
+        .secao-personagens {
+            padding: 40px 0 80px;
+            background: var(--cor-fundo-secao);
+        }
+
+        .titulo-pagina {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--cor-texto-primario), var(--cor-primaria));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitulo-pagina {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Filtros */
+        .filtros-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .filtros {
+            display: inline-flex;
+            gap: 12px;
+            background: var(--cor-fundo);
+            border-radius: var(--raio-borda);
+            padding: 8px;
+            box-shadow: var(--sombra-suave);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filtro-btn {
+            padding: 8px 20px;
+            border: none;
+            background: transparent;
+            color: var(--cor-texto-secundario);
+            border-radius: var(--raio-borda-pequeno);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filtro-btn:hover,
+        .filtro-btn.ativo {
+            background: var(--cor-primaria);
+            color: white;
+        }
+
+        /* Grade de Personagens */
+        .personagens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .personagem-card {
+            background: var(--cor-fundo);
+            border-radius: var(--raio-borda);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            height: fit-content;
+        }
+
+        .personagem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-forte);
+        }
+
+        .personagem-banner {
+            height: 200px;
+            background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .personagem-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%), 
+                        linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.1) 75%), 
+                        linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.1) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            opacity: 0.3;
+        }
+
+        .personagem-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            z-index: 2;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .personagem-avatar img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .personagem-info {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .personagem-nome {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--cor-texto-primario);
+        }
+
+        .personagem-classe {
+            display: inline-block;
+            background: var(--cor-primaria);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .personagem-descricao {
+            color: var(--cor-texto-secundario);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .personagem-stats {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--cor-fundo-secao);
+            border-radius: var(--raio-borda-pequeno);
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--cor-texto-secundario);
+            font-weight: 500;
+        }
+
+        .stat-valor {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--cor-primaria);
+            text-align: right;
+            flex: 1;
+            margin-left: 12px;
+        }
+
+        .ver-detalhes-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--cor-primaria);
+            color: white;
+            border: none;
+            border-radius: var(--raio-borda-pequeno);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ver-detalhes-btn:hover {
+            background: #5855eb;
+            transform: translateY(-2px);
+        }
+
+        /* Cores específicas por classe */
+        .principal .personagem-banner { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .principal .personagem-classe { background: #dc2626; }
+        .principal .stat-valor { color: #dc2626; }
+
+        .secundario .personagem-banner { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+        .secundario .personagem-classe { background: #7c3aed; }
+        .secundario .stat-valor { color: #7c3aed; }
+
+        .clerigo .personagem-banner { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+        .clerigo .personagem-classe { background: #0891b2; }
+        .clerigo .stat-valor { color: #0891b2; }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navegacao {
+                display: none;
+            }
+
+            .menu-mobile {
+                display: block;
+            }
+
+            .titulo-pagina {
+                font-size: 2.2rem;
+            }
+
+            .personagens-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .personagem-descricao {
+                -webkit-line-clamp: 3;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .personagem-card {
+            animation: fadeInUp 0.6s ease-out both;
+        }
+
+        .personagem-card:nth-child(1) { animation-delay: 0.1s; }
+        .personagem-card:nth-child(2) { animation-delay: 0.2s; }
+        .personagem-card:nth-child(3) { animation-delay: 0.3s; }
+        .personagem-card:nth-child(4) { animation-delay: 0.4s; }
+        .personagem-card:nth-child(5) { animation-delay: 0.5s; }
+        .personagem-card:nth-child(6) { animation-delay: 0.6s; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabecalho">
+        <div class="container">
+            <div class="cabecalho-conteudo">
+                <a href="index.html" class="logo">
+                    <div class="logo-icone">W</div>
+                    WikiHub
+                </a>
+                <nav class="navegacao">
+                    <a href="index.html">Início</a>
+                    <a href="#explorar">Explorar</a>
+                    <a href="personagens.html" class="ativo">Personagens</a>
+                    <a href="#comunidade">Comunidade</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <button class="menu-mobile">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Início</a>
+                <span>→</span>
+                <span>Personagens</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Seção Principal de Personagens -->
+    <section class="secao-personagens">
+        <div class="container">
+            <h1 class="titulo-pagina">Personagens Cuphead</h1>
+            <p class="subtitulo-pagina">
+                Conheça todos os heróis, vilões e personagens secundários que moldam a narrativa de Cuphead. 
+                Cada um com sua história única, habilidades especiais e papel fundamental na aventura.
+            </p>
+
+            <!-- Filtros -->
+            <div class="filtros-container">
+                <div class="filtros">
+                    <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                    <button class="filtro-btn" data-filtro="principal">Principais</button>
+                    <button class="filtro-btn" data-filtro="secundario">Secundários</button>
+                    <button class="filtro-btn" data-filtro="clerigo">Suporte</button>
+                </div>
+            </div>
+
+            <!-- Grade de Personagens -->
+            <div class="personagens-grid">
+                <!-- Xicrinho/Cuphead -->
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/xicrinho.png" alt="Xicrinho" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">☕</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Xicrinho (Cuphead)</h3>
+                        <span class="personagem-classe">Principal</span>
+                        <p class="personagem-descricao">
+                            Xicrinho é o mais confiante, audacioso e determinado dos irmãos. Tem uma personalidade carismática, porém problemática, e está sempre disposto a arriscar tudo para obter riquezas. Apesar de suas falhas, tem um bom coração e boas intenções.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Aventureiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Ilha Tinteiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Xícara</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Caneco/Mugman -->
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/caneco.png" alt="Caneco" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🥤</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Caneco (Mugman)</h3>
+                        <span class="personagem-classe">Principal</span>
+                        <p class="personagem-descricao">
+                            Embora seja divertido como Cuphead, Caneco é mais cuidadoso e menos imprudente em comparação com seu irmão. Ele age como a voz da razão e sempre tenta evitar que se metam em confusões.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Aventureiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Ilha Tinteiro</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Xícara</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Rei Dado -->
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/dado.png" alt="Rei Dado" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🎲</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Rei Dado</h3>
+                        <span class="personagem-classe">Antagonista</span>
+                        <p class="personagem-descricao">
+                            Rei Dado é um indivíduo desprezível, manipulador e de confiabilidade duvidosa. Age de forma relaxada e alegre, mas pode ser extremamente cruel quando quer. É muito arrogante e confiante em si mesmo.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Braço direito do Diabo</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Casa da Morte</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Dado</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Diabo -->
+                <div class="personagem-card principal" data-classe="principal">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/corno.png" alt="Diabo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">👹</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Diabo</h3>
+                        <span class="personagem-classe">Chefe Final</span>
+                        <p class="personagem-descricao">
+                            O Diabo é um ser cruel e malévolo que concede ofertas em troca de almas. Não tem empatia com os outros, incluindo seus próprios servos. Tem como características principais o orgulho e egocentrismo.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Dono de Cassino</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Inkwell Hell</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Demônio</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Velha Chaleira -->
+                <div class="personagem-card secundario" data-classe="secundario">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/caneca.png" alt="Velha Chaleira" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🫖</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Velha Chaleira</h3>
+                        <span class="personagem-classe">Mentor</span>
+                        <p class="personagem-descricao">
+                            Velha Chaleira é uma figura parental clássica, sendo muito sábio e sempre querendo que os irmãos façam a coisa certa. Está fortemente implícito que ele é um cavaleiro aposentado.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Mentor/Cuidador</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Ilha Tinteiro Um</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Chaleira</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Seu Torresmo -->
+                <div class="personagem-card secundario" data-classe="secundario">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/porko.png" alt="Seu Torresmo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🐷</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Seu Torresmo</h3>
+                        <span class="personagem-classe">Comerciante</span>
+                        <p class="personagem-descricao">
+                            Seu Torresmo é um porco antropomórfico comerciante. Ele é bege com focinho rosa, usa uma camiseta cinza, macacão castanho e um tapa-olho no olho direito.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Comerciante</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Todas as Ilhas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Porco</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Cálice Lendária -->
+                <div class="personagem-card clerigo" data-classe="clerigo">
+                    <div class="personagem-banner">
+                        <div class="personagem-avatar">
+                            <img src="imgs/calice.png" alt="Cálice Lendária" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div style="display:none; width:100%; height:100%; align-items:center; justify-content:center; font-size:24px;">🏆</div>
+                        </div>
+                    </div>
+                    <div class="personagem-info">
+                        <h3 class="personagem-nome">Cálice Lendária</h3>
+                        <span class="personagem-classe">Guardiã</span>
+                        <p class="personagem-descricao">
+                            Ela é bastante educada e útil, sendo amigável com Cuphead e Mugman depois de ser resgatada. É responsável por ensinar Super Arts aos jogadores.
+                        </p>
+                        <div class="personagem-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ocupação:</span>
+                                <span class="stat-valor">Guardiã de Super Arts</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Localização:</span>
+                                <span class="stat-valor">Mausoléus</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Espécie:</span>
+                                <span class="stat-valor">Cálice</span>
+                            </div>
+                        </div>
+                        <button class="ver-detalhes-btn">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Narrador -->
+                <div class="personagem-card clerigo" data-classe="

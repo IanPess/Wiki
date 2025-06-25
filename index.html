@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiHub - Sua Base de Conhecimento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabecalho">
+        <div class="container">
+            <div class="cabecalho-conteudo">
+                <a href="#" class="logo">
+                    <div class="logo-icone">W</div>
+                    WikiHub
+                </a>
+                <nav class="navegacao">
+                    <a href="#secao-principal" class="ativo">Início</a>
+                    <a href="#secao-destaque">Explorar</a>
+                    <a href="#secao-feedback">Comunidade</a>
+                    <a href="#rodape">Contato</a>
+                </nav>
+                <button class="menu-mobile">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Principal -->
+    <section id="secao-principal">
+        <div class="fundo-decorativo"></div>
+        <div class="container">
+            <div class="secao-principal-conteudo">
+                <h1 class="titulo-principal">Sua Base de Conhecimento Definitiva</h1>
+                <p class="descricao-principal">
+                    Organize, explore e compartilhe conhecimento de forma inteligente. 
+                    Uma wiki moderna e colaborativa para equipes e comunidades.
+                </p>
+                <button class="botao-cta" onclick="document.getElementById('secao-destaque').scrollIntoView({behavior: 'smooth'})">
+                    ✨ Começar Agora
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Destaque -->
+    <section id="secao-destaque">
+        <div class="container">
+            <h2 class="titulo-secao">Explore o Conteúdo</h2>
+            <p class="subtitulo-secao">
+                Descubra diferentes categorias de conhecimento organizadas para facilitar sua navegação e aprendizado.
+            </p>
+            
+            <div class="grade-cartoes">
+                <div class="cartao-destaque">
+                    <div class="icone-cartao">👥</div>
+                    <h3 class="titulo-cartao">Personagens</h3>
+                    <p class="descricao-cartao">
+                        Conheça todos os personagens principais e secundários com biografias detalhadas e histórias envolventes.
+                    </p>
+                    <a href="personagens.html"><button class="botao-cards">Ver Mais</button></a>
+                </div>
+                
+                <div class="cartao-destaque">
+                    <div class="icone-cartao">⚔️</div>
+                    <h3 class="titulo-cartao">Chefes</h3>
+                    <p class="descricao-cartao">
+                        Estratégias, pontos fracos e guias completos para derrotar os chefes mais desafiadores.
+                    </p>
+                    <a href="boss.html"><button class="botao-cards">Ver Mais</button></a>
+                </div>
+                
+                <div class="cartao-destaque">
+                    <div class="icone-cartao">📚</div>
+                    <h3 class="titulo-cartao">História</h3>
+                    <p class="descricao-cartao">
+                        Mergulhe na narrativa rica e complexa com cronologias, eventos e conexões entre os acontecimentos.
+                    </p>
+                    <a href="historia.html"><button class="botao-cards">Ver Mais</button></a>
+                </div>
+                
+                <div class="cartao-destaque">
+                    <div class="icone-cartao">🗺️</div>
+                    <h3 class="titulo-cartao">Níveis</h3>
+                    <p class="descricao-cartao">
+                        Mapas detalhados, segredos ocultos e walkthrough completo para cada área e localização.
+                    </p>
+                    <button class="botao-cards">Ver Mais</button>
+                </div>
+                
+                <div class="cartao-destaque">
+                    <div class="icone-cartao">💎</div>
+                    <h3 class="titulo-cartao">Itens</h3>
+                    <p class="descricao-cartao">
+                        Catálogo completo de armas, armaduras, consumíveis e itens especiais com estatísticas e localização.
+                    </p>
+                    <a href="itens.html"><button class="botao-cards">Ver Mais</button></a>
+                </div>
+                
+                <div class="cartao-destaque">
+                    <div class="icone-cartao">🎯</div>
+                    <h3 class="titulo-cartao">Guias</h3>
+                    <p class="descricao-cartao">
+                        Tutoriais passo a passo, dicas avançadas e estratégias para dominar todos os aspectos do jogo.
+                    </p>
+                    <button class="botao-cards">Ver Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Feedback -->
+    <section id="secao-feedback">
+        <div class="container">
+            <div class="feedback-container">
+                <div class="feedback-conteudo">
+                    <p class="feedback-texto">
+                        "Esta wiki transformou completamente a forma como nossa equipe organiza e compartilha conhecimento. 
+                        A interface intuitiva e as funcionalidades modernas tornaram a colaboração muito mais eficiente."
+                    </p>
+                    <div class="feedback-autor">Marina Silva</div>
+                    <div class="feedback-cargo">Líder de Projeto, TechCorp</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="rodape">
+        <div class="container">
+            <div class="rodape-conteudo">
+                <div class="rodape-secao">
+                    <h3>WikiHub</h3>
+                    <p>Sua plataforma completa para organização e compartilhamento de conhecimento.</p>
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social" aria-label="Facebook">📘</a>
+                        <a href="#" class="rede-social" aria-label="Twitter">🐦</a>
+                        <a href="#" class="rede-social" aria-label="LinkedIn">💼</a>
+                        <a href="#" class="rede-social" aria-label="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="rodape-secao">
+                    <h3>Navegação</h3>
+                    <a href="#secao-principal">Início</a>
+                    <a href="#secao-destaque">Explorar</a>
+                    <a href="#secao-feedback">Comunidade</a>
+                    <a href="#rodape">Contato</a>
+                </div>
+                
+                <div class="rodape-secao">
+                    <h3>Recursos</h3>
+                    <a href="#documentacao">Documentação</a>
+                    <a href="#api">API</a>
+                    <a href="#suporte">Suporte</a>
+                    <a href="#changelog">Changelog</a>
+                </div>
+                
+                <div class="rodape-secao">
+                    <h3>Legal</h3>
+                    <a href="#privacidade">Política de Privacidade</a>
+                    <a href="#termos">Termos de Uso</a>
+                    <a href="#cookies">Cookies</a>
+                    <a href="#licenca">Licença</a>
+                </div>
+            </div>
+            
+            <div class="rodape-copyright">
+                <p>&copy; 2025 WikiHub. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

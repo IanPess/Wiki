@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/itens.css">
+</head>
+<body>
+     <header id="cabecalho">
+        <div class="container">
+            <div class="cabecalho-conteudo">
+                <a href="index.html" class="logo">
+                    <div class="logo-icone">☕</div>
+                    WikiHub
+                </a>
+                <nav class="navegacao">
+                    <a href="index.html">Início</a>
+                    <a href="personagens.html">Personagens</a>
+                    <a href="boss.html">Chefes</a>
+                    <a href="historia.html">História</a>
+                    <a href="itens.html" class="ativo">Itens</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="secao-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb">
+                    <a href="index.html">Início</a>
+                    <span>›</span>
+                    <span>Itens do Cuphead</span>
+                </div>
+                <h1 class="hero-titulo">Arsenal e Itens</h1>
+                <p class="hero-subtitulo">
+                    Descubra todos os tiros, charms e power-ups disponíveis no mundo de Cuphead
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filtros-container">
+        <div class="container">
+            <div class="filtros">
+                <button class="filtro-btn ativo" onclick="filtrarItens('todos')">Todos</button>
+                <button class="filtro-btn" onclick="filtrarItens('tiros')">Tiros</button>
+                <button class="filtro-btn" onclick="filtrarItens('charms')">Charms</button>
+                <button class="filtro-btn" onclick="filtrarItens('super')">Super Arts</button>
+                <button class="filtro-btn" onclick="filtrarItens('especiais')">Especiais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Itens -->
+    <section class="secao-itens">
+        <div class="container">
+            <!-- Tiros -->
+            <div class="categoria-itens" data-categoria="tiros">
+                <h2 class="categoria-titulo">🔫 Tiros Principais</h2>
+                <div class="itens-grid">
+                    <div class="item-card">
+                        <div class="item-icone">🎯</div>
+                        <h3 class="item-nome">Peashooter</h3>
+                        <span class="item-tipo">Tiro Básico</span>
+                        <p class="item-descricao">
+                            O tiro padrão de Cuphead. Rápido e confiável, perfeito para iniciantes e situações que exigem precisão.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Médio</span>
+                            <span class="stat">Taxa de Tiro: Rápida</span>
+                            <span class="stat">Alcance: Longo</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Disponível desde o início do jogo</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🌊</div>
+                        <h3 class="item-nome">Spread</h3>
+                        <span class="item-tipo">Tiro Espalhado</span>
+                        <p class="item-descricao">
+                            Dispara múltiplos projéteis em leque. Devastador a curta distância, mas perde eficácia com a distância.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Alto (perto)</span>
+                            <span class="stat">Taxa de Tiro: Média</span>
+                            <span class="stat">Alcance: Curto</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 4 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">⚡</div>
+                        <h3 class="item-nome">Chaser</h3>
+                        <span class="item-tipo">Tiro Teleguiado</span>
+                        <p class="item-descricao">
+                            Projéteis que seguem automaticamente os inimigos. Perfeito para chefes com movimento rápido.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Baixo</span>
+                            <span class="stat">Taxa de Tiro: Média</span>
+                            <span class="stat">Alcance: Auto-mira</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 6 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🔥</div>
+                        <h3 class="item-nome">Lobber</h3>
+                        <span class="item-tipo">Tiro Parabólico</span>
+                        <p class="item-descricao">
+                            Projéteis que fazem trajetória em arco e explodem ao impacto. Excelente para atingir inimigos atrás de obstáculos.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Alto</span>
+                            <span class="stat">Taxa de Tiro: Lenta</span>
+                            <span class="stat">Alcance: Variável</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 4 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">❄️</div>
+                        <h3 class="item-nome">Roundabout</h3>
+                        <span class="item-tipo">Tiro Boomerang</span>
+                        <p class="item-descricao">
+                            Projéteis rosas que voltam como boomerang, causando dano duplo quando retornam.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Médio x2</span>
+                            <span class="stat">Taxa de Tiro: Média</span>
+                            <span class="stat">Alcance: Retorna</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 4 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">⭐</div>
+                        <h3 class="item-nome">Charge</h3>
+                        <span class="item-tipo">Tiro Carregável</span>
+                        <p class="item-descricao">
+                            Pode ser carregado para causar mais dano. Três níveis de carga com diferentes efeitos visuais.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Variável</span>
+                            <span class="stat">Taxa de Tiro: Carregável</span>
+                            <span class="stat">Alcance: Médio</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 6 moedas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charms -->
+            <div class="categoria-itens" data-categoria="charms">
+                <h2 class="categoria-titulo">✨ Charms Mágicos</h2>
+                <div class="itens-grid">
+                    <div class="item-card">
+                        <div class="item-icone cuphead-special">💓</div>
+                        <h3 class="item-nome">Heart</h3>
+                        <span class="item-tipo">Charm Defensivo</span>
+                        <p class="item-descricao">
+                            Adiciona um ponto de vida extra. Essencial para iniciantes ou chefes particularmente difíceis.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">+1 HP</span>
+                            <span class="stat">Reduz Dano em 25%</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 3 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">☕</div>
+                        <h3 class="item-nome">Coffee</h3>
+                        <span class="item-tipo">Charm de Velocidade</span>
+                        <p class="item-descricao">
+                            Aumenta a velocidade de movimento e a capacidade de dash, permitindo manobras mais ágeis.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">+Velocidade</span>
+                            <span class="stat">Dash Aprimorado</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 3 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🍯</div>
+                        <h3 class="item-nome">Smoke Bomb</h3>
+                        <span class="item-tipo">Charm Evasivo</span>
+                        <p class="item-descricao">
+                            Permite atravessar inimigos e projéteis durante o dash, oferecendo invencibilidade temporária.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dash Invencível</span>
+                            <span class="stat">Atravessa Inimigos</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 4 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone mugman-special">🎯</div>
+                        <h3 class="item-nome">P. Sugar</h3>
+                        <span class="item-tipo">Charm Automático</span>
+                        <p class="item-descricao">
+                            Ativa automaticamente os Super Arts quando a barra está cheia, perfeito para jogadores casuais.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Auto Super Art</span>
+                            <span class="stat">Sem Comando Manual</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 3 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🍀</div>
+                        <h3 class="item-nome">Whetstone</h3>
+                        <span class="item-tipo">Charm de Combate</span>
+                        <p class="item-descricao">
+                            Transforma ataques corpo a corpo em golpes devastadores, causando dano extra aos inimigos.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Ataque Corpo-a-Corpo</span>
+                            <span class="stat">Dano Alto</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 4 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🎪</div>
+                        <h3 class="item-nome">Twin Heart</h3>
+                        <span class="item-tipo">Charm Super Defensivo</span>
+                        <p class="item-descricao">
+                            Adiciona dois pontos de vida extras, mas reduz significativamente o dano causado.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">+2 HP</span>
+                            <span class="stat">Reduz Dano em 50%</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 5 moedas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Super Arts -->
+            <div class="categoria-itens" data-categoria="super">
+                <h2 class="categoria-titulo">💥 Super Arts</h2>
+                <div class="itens-grid">
+                    <div class="item-card">
+                        <div class="item-icone cuphead-special">🌟</div>
+                        <h3 class="item-nome">Energy Beam</h3>
+                        <span class="item-tipo">Super Art I</span>
+                        <p class="item-descricao">
+                            Um poderoso raio de energia que atravessa toda a tela, causando dano massivo a todos os inimigos no caminho.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano: Muito Alto</span>
+                            <span class="stat">Alcance: Tela Inteira</span>
+                            <span class="stat">Custo: 1 Card</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Disponível desde o início</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🎯</div>
+                        <h3 class="item-nome">Invincibility</h3>
+                        <span class="item-tipo">Super Art II</span>
+                        <p class="item-descricao">
+                            Concede invencibilidade temporária e aumenta a velocidade de movimento por alguns segundos.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Invencibilidade</span>
+                            <span class="stat">Velocidade Aumentada</span>
+                            <span class="stat">Custo: 2 Cards</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 4 moedas</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone mugman-special">👻</div>
+                        <h3 class="item-nome">Giant Ghost</h3>
+                        <span class="item-tipo">Super Art III</span>
+                        <p class="item-descricao">
+                            Invoca um fantasma gigante que segue o jogador e causa dano contínuo aos inimigos próximos.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano Contínuo</span>
+                            <span class="stat">Segue o Jogador</span>
+                            <span class="stat">Custo: 3 Cards</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Compre na loja de Porkrind por 5 moedas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Itens Especiais -->
+            <div class="categoria-itens" data-categoria="especiais">
+                <h2 class="categoria-titulo">🎁 Itens Especiais</h2>
+                <div class="itens-grid">
+                    <div class="item-card">
+                        <div class="item-icone">🪙</div>
+                        <h3 class="item-nome">Moedas</h3>
+                        <span class="item-tipo">Moeda Coletável</span>
+                        <p class="item-descricao">
+                            Moeda principal do jogo, encontrada em fases de corrida e plataforma. Use para comprar itens na loja.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Moeda do Jogo</span>
+                            <span class="stat">40 Total</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Colete nos níveis de corrida e plataforma</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone cuphead-special">🎴</div>
+                        <h3 class="item-nome">Super Cards</h3>
+                        <span class="item-tipo">Energia Super</span>
+                        <p class="item-descricao">
+                            Cartas que alimentam seus Super Arts. Ganhe causando dano e evitando ser atingido por um tempo.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Máximo: 5 Cards</span>
+                            <span class="stat">Recarrega com Dano</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Geradas automaticamente durante o combate</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🔥</div>
+                        <h3 class="item-nome">EX Shots</h3>
+                        <span class="item-tipo">Tiro Especial</span>
+                        <p class="item-descricao">
+                            Versões aprimoradas dos tiros normais que consomem uma carta super mas causam muito mais dano.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Dano Aumentado</span>
+                            <span class="stat">Custo: 1 Card</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Disponível automaticamente com qualquer arma</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone mugman-special">🏆</div>
+                        <h3 class="item-nome">Contratos</h3>
+                        <span class="item-tipo">Item de Missão</span>
+                        <p class="item-descricao">
+                            Contratos que Cuphead e Mugman devem coletar para o Diabo. Obtidos derrotando chefes.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Item de História</span>
+                            <span class="stat">Necessário para Progressão</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Derrote os chefes devedores do Diabo</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🗝️</div>
+                        <h3 class="item-nome">Chaves Secretas</h3>
+                        <span class="item-tipo">Item Oculto</span>
+                        <p class="item-descricao">
+                            Chaves escondidas em diferentes fases que desbloqueiam áreas secretas e conteúdo adicional.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">Desbloqueia Segredos</span>
+                            <span class="stat">Bem Escondidas</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Encontradas em locais secretos das fases</p>
+                        </div>
+                    </div>
+
+                    <div class="item-card">
+                        <div class="item-icone">🎪</div>
+                        <h3 class="item-nome">Tokens do Carnaval</h3>
+                        <span class="item-tipo">Moeda Especial</span>
+                        <p class="item-descricao">
+                            Tokens especiais encontrados no DLC "The Delicious Last Course" para comprar novos itens.
+                        </p>
+                        <div class="item-stats">
+                            <span class="stat">DLC Exclusive</span>
+                            <span class="stat">Moeda do Carnaval</span>
+                        </div>
+                        <div class="item-como-obter">
+                            <h4>Como Obter:</h4>
+                            <p>Colete nas fases do DLC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

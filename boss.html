@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chefes - WikiHub | Guia Completo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/boss.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="cabecalho">
+        <div class="container">
+            <div class="cabecalho-conteudo">
+                <a href="index.html" class="logo">
+                    <div class="logo-icone">W</div>
+                    WikiCub
+                </a>
+                <nav class="navegacao">
+                    <a href="index.html">Início</a>
+                    <a href="#explorar">Explorar</a>
+                    <a href="#chefes" class="ativo">Chefes</a>
+                    <a href="#comunidade">Comunidade</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Título -->
+    <section id="secao-titulo">
+        <div class="fundo-titulo"></div>
+        <div class="container">
+            <div class="titulo-conteudo">
+                <nav class="breadcrumb">
+                    <a href="#inicio">Início</a>
+                    <span>›</span>
+                    <span>Chefes</span>
+                </nav>
+                <h1 class="titulo-pagina">Chefes</h1>
+                <p class="subtitulo-pagina">
+                    Domine todos os desafios com estratégias detalhadas, pontos fracos e guias completos para derrotar os chefes mais formidáveis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Filtros -->
+    <section id="secao-filtros">
+        <div class="container">
+            <div class="filtros-container">
+                <div class="filtros-grupo">
+                    <button class="filtro-botao ativo" data-filtro="todos">Todos</button>
+                    <button class="filtro-botao" data-filtro="facil">Fácil</button>
+                    <button class="filtro-botao" data-filtro="medio">Médio</button>
+                    <button class="filtro-botao" data-filtro="dificil">Difícil</button>
+                    <button class="filtro-botao" data-filtro="final">Boss Final</button>
+                </div>
+                <div class="barra-pesquisa">
+                    <span class="icone-pesquisa">🔍</span>
+                    <input type="text" class="campo-pesquisa" placeholder="Pesquisar chefes..." id="campoPesquisa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Chefes -->
+    <section id="secao-chefes">
+        <div class="container">
+            <div class="grade-chefes" id="gradeChefes">
+                <!-- Os chefes serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalhes -->
+    <div class="modal-overlay" id="modalDetalhes">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2 class="modal-titulo" id="modalTitulo">Detalhes do Chefe</h2>
+                <button class="botao-fechar" onclick="fecharModal()">×</button>
+            </div>
+            <div class="modal-corpo" id="modalCorpo">
+                <!-- Conteúdo será inserido via JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
