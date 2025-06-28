@@ -68,120 +68,34 @@ const observador = new IntersectionObserver((entries) => {
 
 // Dados dos chefes
 const dadosChefes = [
-    {
-        id: 1,
-        nome: "Dragão das Chamas",
-        tipo: "Boss Elemental",
-        dificuldade: "dificil",
-        hp: 15000,
-        nivel: 45,
-        area: "Caverna Vulcânica",
-        icone: "🐉",
-        descricao: "Um dragão ancestral que guarda os tesouros mais valiosos da caverna vulcânica. Seus ataques de fogo podem devastar grupos inteiros.",
-        pontosFracos: ["Ataques de gelo", "Ataques na cauda", "Período após respirar fogo"],
-        estrategias: [
-            "Use equipamentos resistentes ao fogo antes da batalha",
-            "Ataque a cauda quando ele estiver respirando fogo",
-            "Mantenha distância durante os ataques em área",
-            "Use magias de gelo para causar dano extra"
-        ],
-        recompensas: ["Escama de Dragão", "Gema do Fogo Eterno", "15.000 XP"]
-    },
-    {
-        id: 2,
-        nome: "Cavaleiro Sombrio",
-        tipo: "Boss Humanóide",
-        dificuldade: "medio",
-        hp: 8500,
-        nivel: 32,
-        area: "Castelo Assombrado",
-        icone: "⚔️",
-        descricao: "Um cavaleiro corrompido pela magia sombria. Possui ataques rápidos e conhece várias técnicas de espada.",
-        pontosFracos: ["Magia de luz", "Ataques mágicos", "Velocidade reduzida após combo"],
-        estrategias: [
-            "Use armas abençoadas ou magias de luz",
-            "Bloqueie seus combos e contra-ataque",
-            "Evite lutar corpo a corpo por muito tempo",
-            "Use o ambiente para criar distância"
-        ],
-        recompensas: ["Espada Sombria", "Armadura do Cavaleiro", "8.500 XP"]
-    },
-    {
-        id: 3,
-        nome: "Kraken das Profundezas",
-        tipo: "Boss Aquático",
-        dificuldade: "dificil",
-        hp: 18000,
-        nivel: 50,
-        area: "Abismo Marinho",
-        icone: "🦑",
-        descricao: "Uma criatura lendária dos mares profundos. Seus tentáculos podem atingir múltiplos alvos simultaneamente.",
-        pontosFracos: ["Ataques elétricos", "Tentáculos individuais", "Olhos durante fúria"],
-        estrategias: [
-            "Foque em destruir os tentáculos um por vez",
-            "Use ataques elétricos para atordoar",
-            "Ataque os olhos quando ele entrar em fúria",
-            "Mantenha-se em movimento para evitar agarrões"
-        ],
-        recompensas: ["Tentáculo do Kraken", "Pérola das Profundezas", "20.000 XP"]
-    },
-    {
-        id: 4,
-        nome: "Golem de Pedra",
-        tipo: "Boss Construto",
-        dificuldade: "facil",
-        hp: 6000,
-        nivel: 25,
-        area: "Templo Antigo",
-        icone: "🗿",
-        descricao: "Um guardião antigo feito de pedra e magia. Movimentos lentos mas ataques devastadores.",
-        pontosFracos: ["Ataques de terra", "Juntas nas pernas", "Magia de desarme"],
-        estrategias: [
-            "Ataque as juntas das pernas para derrubá-lo",
-            "Use sua lentidão para atacar e recuar",
-            "Magias de terra causam dano extra",
-            "Evite ficar na frente dele por muito tempo"
-        ],
-        recompensas: ["Núcleo de Golem", "Pedra Rúnica", "6.000 XP"]
-    },
-    {
-        id: 5,
-        nome: "Lich Supremo",
-        tipo: "Boss Final",
-        dificuldade: "dificil",
-        hp: 25000,
-        nivel: 60,
-        area: "Torre da Perdição",
-        icone: "💀",
-        descricao: "O mago mais poderoso que se tornou imortal através da necromancia. Boss final com múltiplas fases.",
-        pontosFracos: ["Magia sagrada", "Phylactery", "Interrupção de conjuração"],
-        estrategias: [
-            "Primeira fase: Destrua os cristais ao redor da sala",
-            "Segunda fase: Interrompa suas conjurações poderosas",
-            "Fase final: Encontre e destrua o phylactery",
-            "Use proteção contra necromancia constantemente"
-        ],
-        recompensas: ["Cajado do Lich", "Coroa da Imortalidade", "50.000 XP", "Conquista Final"]
-    },
-    {
-        id: 6,
-        nome: "Hidra Venenosa",
-        tipo: "Boss Bestial",
-        dificuldade: "medio",
-        hp: 12000,
-        nivel: 38,
-        area: "Pântano Tóxico",
-        icone: "🐍",
-        descricao: "Uma hidra de três cabeças que regenera quando ferida. Seus ataques envenenam e causam dano contínuo.",
-        pontosFracos: ["Fogo nas feridas", "Decapitação simultânea", "Antídotos"],
-        estrategias: [
-            "Use fogo para cauterizar as feridas e impedir regeneração",
-            "Tente decapitar múltiplas cabeças simultaneamente",
-            "Mantenha antídotos para o veneno",
-            "Ataque o corpo principal quando possível"
-        ],
-        recompensas: ["Presas de Hidra", "Glândula Venenosa", "12.000 XP"]
-    }
+  // Ilha I
+  { id: 1, nome: "The Root Pack", tipo: "Chefes de nível", dificuldade: "medio", hp: 1250, nivel: 5, area: "Inkwell Isle I", icone: "🌱", descricao: "Trio vegetal: cebola, cenoura e batata", pontosFracos: ["Cenoura", "Cauda"], estrategias: ["Ataque a cenoura no alto", "Use supers"], recompensas: ["Contrato de Alma", "XP", "Moedas"] },
+  { id: 2, nome: "Goopy Le Grande", tipo: "Boss", dificuldade: "facil", hp: 2000, nivel: 8, area: "Inkwell Isle I", icone: "💧", descricao: "Grande verme de limo azul", pontosFracos: ["Ataque corpo a corpo"], estrategias: ["Aproxime-se quando lento"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 3, nome: "Hilda Berg", tipo: "Boss", dificuldade: "medio", hp: 3000, nivel: 10, area: "Inkwell Isle I", icone: "🌙", descricao: "Balão/zodíaco", pontosFracos: ["Ataques nas fases"], estrategias: ["Use dash para evitar"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 4, nome: "Cagney Carnation", tipo: "Boss", dificuldade: "medio", hp: 4000, nivel: 12, area: "Inkwell Isle I", icone: "🌸", descricao: "Flor gigante com vários estágios", pontosFracos: ["Pétalas"], estrategias: ["Ataque ao núcleo"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 5, nome: "Ribby & Croaks", tipo: "Boss", dificuldade: "medio", hp: 4500, nivel: 15, area: "Inkwell Isle I", icone: "🐸", descricao: "Duo de sapos", pontosFracos: ["Ataques sincronizados"], estrategias: ["Ataque em pausa"], recompensas: ["Contrato de Alma", "XP"] },
+
+  // Ilha II
+  { id: 6, nome: "Baroness Von Bon Bon", tipo: "Boss", dificuldade: "medio", hp: 5000, nivel: 18, area: "Inkwell Isle II", icone: "🍭", descricao: "Princesa dos doces", pontosFracos: ["Ataque no carrossel"], estrategias: ["Timing preciso"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 7, nome: "Beppi the Clown", tipo: "Boss", dificuldade: "medio", hp: 5500, nivel: 20, area: "Inkwell Isle II", icone: "🎪", descricao: "Palhaço com etapas múltiplas", pontosFracos: ["Roda do chapeleiro"], estrategias: ["Desvie"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 8, nome: "Djimmi the Great", tipo: "Boss", dificuldade: "dificil", hp: 6000, nivel: 25, area: "Inkwell Isle II", icone: "🧞", descricao: "Gênio em lâmpada", pontosFracos: ["Ataque de lâmpada"], estrategias: ["Mantenha distancia"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 9, nome: "Grim Matchstick", tipo: "Boss", dificuldade: "dificil", hp: 7000, nivel: 28, area: "Inkwell Isle II", icone: "🐉", descricao: "Dragão de fogo", pontosFracos: ["Cabeça entre fases"], estrategias: ["Ataque com dash"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 10, nome: "Wally Warbles", tipo: "Boss", dificuldade: "medio", hp: 4800, nivel: 22, area: "Inkwell Isle II", icone: "🐦", descricao: "Pássaro gigante dentro de relógio", pontosFracos: ["Ataque de tiro"], estrategias: ["Use dash no momento"], recompensas: ["Contrato de Alma", "XP"] },
+
+  // Ilha III
+  { id: 11, nome: "Beetle", tipo: "Mini-chefe", dificuldade: "facil", hp: 1500, nivel: 10, area: "Inkwell Isle III", icone: "🪲", descricao: "Inseto voador", pontosFracos: ["Ram ataques"], estrategias: ["Ataque rápido"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 12, nome: "Cala Maria", tipo: "Boss", dificuldade: "medio", hp: 8000, nivel: 30, area: "Inkwell Isle III", icone: "🧜‍♀️", descricao: "Sereia aquática", pontosFracos: ["Braço hidráulico"], estrategias: ["Use ataque aquático"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 13, nome: "King Dice", tipo: "Subchefe", dificuldade: "medio", hp: 9000, nivel: 35, area: "Casino", icone: "🎲", descricao: "Guardião do Dealer's Room", pontosFracos: ["Fase do tabuleiro"], estrategias: ["Evite cartas"], recompensas: ["Contrato de Alma", "XP"] },
+  { id: 14, nome: "The Devil", tipo: "Boss Final", dificuldade: "dificil", hp: 12000, nivel: 40, area: "Inkwell Hell", icone: "😈", descricao: "Chefão final do jogo original", pontosFracos: ["Ataques após teleporte"], estrategias: ["Use supers"], recompensas: ["Contrato de Alma final", "XP"] },
+
+  // DLC – Inkwell Isle DLC
+  { id: 15, nome: "Glumstone the Giant", tipo: "Boss", dificuldade: "medio", hp: 8500, nivel: 45, area: "Delicious Last Course", icone: "🪨", descricao: "Gigante montado na barba", pontosFracos: ["Pés e bigode"], estrategias: ["Ataque cantos"], recompensas: ["Contrato DLC", "XP"] },
+  { id: 16, nome: "Mortimer Freeze", tipo: "Boss", dificuldade: "medio", hp: 9000, nivel: 47, area: "Delicious Last Course", icone: "❄️", descricao: "Mago de gelo", pontosFracos: ["Rayos congelantes"], estrategias: ["Use fogo"], recompensas: ["Contrato DLC", "XP"] },
+  { id: 17, nome: "Moonshine Mob", tipo: "Boss", dificuldade: "medio", hp: 7500, nivel: 42, area: "Delicious Last Course", icone: "🐌", descricao: "Gangue de insetos bêbados", pontosFracos: ["Carro do meio"], estrategias: ["Ataque por trás"], recompensas: ["Contrato DLC", "XP"] },
+  { id: 18, nome: "Esther Winchester", tipo: "Boss", dificuldade: "medio", hp: 9500, nivel: 49, area: "Delicious Last Course", icone: "🐄", descricao: "Cowgirl voadora", pontosFracos: ["Chapéu/Bezerro"], estrategias: ["Ataque no chão"], recompensas: ["Contrato DLC", "XP"] },
+  { id: 19, nome: "The Howling Aces", tipo: "Boss", dificuldade: "medio", hp: 8800, nivel: 46, area: "Delicious Last Course", icone: "✈️", descricao: "Pilotos de caça no céu", pontosFracos: ["Fase de bombardeio"], estrategias: ["Use dash"], recompensas: ["Contrato DLC", "XP"] },
+  { id: 20, nome: "Chef Saltbaker", tipo: "Boss Final DLC", dificuldade: "dificil", hp: 15000, nivel: 55, area: "Delicious Last Course", icone: "👨‍🍳", descricao: "Chef inimigo final da DLC", pontosFracos: ["Fase das panelas"], estrategias: ["Fique móvel"], recompensas: ["Contrato Final DLC", "XP"] },
+  { id: 21, nome: "Angel & Devil", tipo: "Boss Secreto", dificuldade: "dificil", hp: 16000, nivel: 60, area: "Delicious Last Course", icone: "👼😈", descricao: "Boss secreto do túmulo", pontosFracos: ["Seqüência celestial"], estrategias: ["Aprenda padrões"], recompensas: ["Conquista secreta", "Contrato Secreto"] },
 ];
 
 let chefesFiltrados = [...dadosChefes];
@@ -979,3 +893,191 @@ window.abrirModalPersonagem = function(elemento) {
         window.verMaisPersonagem(elemento);
     }
 };
+// PÀGINA GUIAS
+
+const guiasAvancados = [
+  {
+    titulo: "Builds Recomendadas para Cada Ilha",
+    dificuldade: "medio",
+    icone: "🎯",
+    descricao: "Descubra os melhores amuletos, armas e supers para cada estágio do jogo.",
+    conteudo: [
+      "Ilha I: Use o Tiro Teleguiado + Coração Extra para iniciantes.",
+      "Ilha II: Priorize Tiro Carregável e Fumaça para mobilidade.",
+      "Ilha III: Combine Lobo-Gêmeo com Super II para alto dano.",
+      "Ilha Final: Tiro Redondo e Parry automático funcionam bem com chefes complexos."
+    ]
+  },
+  {
+    titulo: "Técnicas de Parry Avançadas",
+    dificuldade: "dificil",
+    icone: "⚡",
+    descricao: "Aprenda a tirar vantagem máxima do parry em sequências críticas.",
+    conteudo: [
+      "Parry em projéteis consecutivos gera super mais rápido.",
+      "Combine parry com dash para manter momentum ofensivo.",
+      "Use parry para cancelar frames de dano em chefes."
+    ]
+  },
+  {
+    titulo: "Como Derrotar Chefes Sem Tomar Dano",
+    dificuldade: "dificil",
+    icone: "🛡️",
+    descricao: "Roteiros e padrões para derrotar chefes no modo 'Sem Hit'.",
+    conteudo: [
+      "Treine padrões específicos no modo simples antes de ir para Expert.",
+      "Use vídeos em câmera lenta para memorizar padrões de ataque.",
+      "Evite pular sem necessidade — mantenha posição previsível."
+    ]
+  },
+  {
+    titulo: "Melhores Rotas para 100%",
+    dificuldade: "medio",
+    icone: "📍",
+    descricao: "Otimize sua jornada para completar tudo com menos tentativas.",
+    conteudo: [
+      "Faça todas as fases Run 'n Gun antes de chefes difíceis para ganhar moedas.",
+      "Priorize a compra de tiros versáteis como Teleguiado e Redondo.",
+      "Conclua os desafios do King Dice antes de encarar o Diabo para praticar pressão."
+    ]
+  }
+];
+
+const container = document.getElementById("gradeGuias");
+
+function criarGuiaHTML(guia) {
+  const div = document.createElement("div");
+  div.className = "cartao-chefe";
+  div.innerHTML = `
+    <div class="imagem-chefe">${guia.icone}
+      <div class="nivel-dificuldade nivel-${guia.dificuldade}">${guia.dificuldade}</div>
+    </div>
+    <div class="conteudo-chefe">
+      <h2 class="nome-chefe">${guia.titulo}</h2>
+      <div class="tipo-chefe">Guia Estratégico</div>
+      <div class="descricao-chefe">${guia.descricao}</div>
+      <ul class="estrategia-lista">
+        ${guia.conteudo.map(item => `<li class="estrategia-item">${item}</li>`).join("")}
+      </ul>
+    </div>
+  `;
+  return div;
+}
+
+function carregarGuias() {
+  container.innerHTML = "";
+  guiasAvancados.forEach(guia => {
+    container.appendChild(criarGuiaHTML(guia));
+  });
+}
+
+carregarGuias();
+
+ // Sistema de avaliação por estrelas
+ const estrelas = document.querySelectorAll('.estrela');
+ const textoAvaliacao = document.getElementById('texto-avaliacao');
+ let avaliacaoSelecionada = 0;
+
+ const textos = {
+     1: 'Muito ruim',
+     2: 'Ruim',
+     3: 'Regular',
+     4: 'Bom',
+     5: 'Excelente'
+ };
+
+ estrelas.forEach(estrela => {
+     estrela.addEventListener('click', () => {
+         avaliacaoSelecionada = parseInt(estrela.dataset.valor);
+         atualizarEstrelas();
+         textoAvaliacao.textContent = textos[avaliacaoSelecionada];
+     });
+
+     estrela.addEventListener('mouseover', () => {
+         const valor = parseInt(estrela.dataset.valor);
+         destacarEstrelas(valor);
+     });
+ });
+
+ document.getElementById('avaliacao').addEventListener('mouseleave', () => {
+     atualizarEstrelas();
+ });
+
+ function destacarEstrelas(valor) {
+     estrelas.forEach((estrela, index) => {
+         if (index < valor) {
+             estrela.classList.add('ativa');
+         } else {
+             estrela.classList.remove('ativa');
+         }
+     });
+ }
+
+ function atualizarEstrelas() {
+     destacarEstrelas(avaliacaoSelecionada);
+ }
+
+ // Manipulação do formulário
+ const formulario = document.getElementById('formulario-contribuicao');
+ const mensagem = document.getElementById('mensagem');
+ const botaoEnviar = document.getElementById('botao-enviar');
+
+ formulario.addEventListener('submit', (e) => {
+     e.preventDefault();
+     
+     // Validação básica
+     const nome = document.getElementById('nome').value.trim();
+     const email = document.getElementById('email').value.trim();
+     const tipo = document.getElementById('tipo').value;
+     const assunto = document.getElementById('assunto').value.trim();
+     const mensagemConteudo = document.getElementById('mensagem-conteudo').value.trim();
+
+     if (!nome || !email || !tipo || !assunto || !mensagemConteudo) {
+         mostrarMensagem('Por favor, preencha todos os campos obrigatórios.', 'erro');
+         return;
+     }
+
+     // Simulação de envio
+     botaoEnviar.disabled = true;
+     botaoEnviar.textContent = '📤 Enviando...';
+
+     setTimeout(() => {
+         // Aqui você integraria com seu backend
+         console.log('Dados do formulário:', {
+             nome,
+             email,
+             tipo,
+             assunto,
+             mensagem: mensagemConteudo,
+             avaliacao: avaliacaoSelecionada,
+             categoria: document.getElementById('categoria').value
+         });
+
+         mostrarMensagem('Sua contribuição foi enviada com sucesso! Obrigado pelo feedback.', 'sucesso');
+         formulario.reset();
+         avaliacaoSelecionada = 0;
+         atualizarEstrelas();
+         textoAvaliacao.textContent = '';
+         
+         botaoEnviar.disabled = false;
+         botaoEnviar.textContent = '📤 Enviar Contribuição';
+     }, 2000);
+ });
+
+ function mostrarMensagem(texto, tipo) {
+     mensagem.textContent = texto;
+     mensagem.className = `mensagem ${tipo}`;
+     mensagem.style.display = 'block';
+     
+     setTimeout(() => {
+         mensagem.style.display = 'none';
+     }, 5000);
+ }
+
+ // Menu mobile
+ const menuMobile = document.querySelector('.menu-mobile');
+ const navegacao = document.querySelector('.navegacao');
+
+ menuMobile.addEventListener('click', () => {
+     navegacao.style.display = navegacao.style.display === 'flex' ? 'none' : 'flex';
+ });
