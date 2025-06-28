@@ -5,8 +5,8 @@
 }
 
 :root {
-    --cor-primaria: #6366f1;
-    --cor-secundaria: #f1f5f9;
+    --cor-primaria: #d62d20;
+    --cor-secundaria: #f4e5a1;
     --cor-texto-primario: #1e293b;
     --cor-texto-secundario: #64748b;
     --cor-fundo: #ffffff;
@@ -70,7 +70,7 @@ body {
 .logo-icone {
     width: 42px;
     height: 42px;
-    background: linear-gradient(135deg, var(--cor-primaria), #8b5cf6);
+    background: linear-gradient(135deg, var(--cor-primaria), #ff6b35 );
     border-radius: var(--raio-borda-pequeno);
     display: flex;
     align-items: center;
