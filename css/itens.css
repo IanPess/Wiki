@@ -5,16 +5,16 @@
         }
 
         :root {
-            --cor-primaria: #6366f1;
-            --cor-secundaria: #6263aa;
+            --cor-primaria: #d62d20;
+            --cor-secundaria: #d62d20;
             --cor-tertaria: #3498db;
             --cor-texto-primario: #2c3e50;
             --cor-texto-secundario: #7f8c8d;
             --cor-fundo: #ffffff;
             --cor-fundo-secao: #f8f9fa;
-            --cor-borda: #e9ecef;
-            --cor-cuphead: #6366f1;
-            --cor-mugman: #f1f5f9;
+            --cor-borda: #d62d20;
+            --cor-cuphead: #d62d20;
+            --cor-mugman: #d62d20;
             --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --sombra-forte: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -399,11 +399,11 @@
         .item-card:nth-child(6) { animation-delay: 0.6s; }
 
         .cuphead-special {
-            background: linear-gradient(135deg, var(--cor-cuphead), #ff8c42);
+            background: linear-gradient(135deg, var(--cor-cuphead), #d62d20);
         }
 
         .mugman-special {
-            background: linear-gradient(135deg, var(--cor-mugman), #6bb6ff);
+            background: linear-gradient(135deg, var(--cor-mugman), #d62d20);
         }
 
         html {
